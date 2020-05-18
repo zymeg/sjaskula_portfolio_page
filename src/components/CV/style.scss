@@ -1,0 +1,31 @@
+#cv {
+    min-height: 50vh;
+    background: #333;
+    color: #ddd;
+
+    .resumes {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 80%;
+        margin: 2rem auto;
+
+        .btn {
+            display: block;
+            width: 40%;
+            padding: 2rem;
+            color: #ddd;
+            background: #3aa;
+            text-align: center;
+            font-size: 2.3rem;
+            text-decoration: none;
+            border-radius: .3rem;
+            transition: background 300ms;
+
+            &:hover {
+                background: darken(#3aa, 10%);
+            }
+        }
+
+    }
+}

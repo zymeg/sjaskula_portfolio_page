@@ -1,0 +1,41 @@
+$color: linear-gradient(to right, #33aaaa 50%, #4025b8);
+
+header {
+    position: sticky;
+    display: flex;
+    width: 100%;
+    background: $color;
+    justify-content: flex-end;
+    border-bottom: 2px solid #777;
+
+    ul {
+        display: flex;
+        list-style: none;
+        align-items: center;
+        justify-items: space-around;
+        justify-content: center;
+        min-width: 60%;
+        line-break: none;
+
+        li {
+            text-align: center;
+            width: 100%;
+
+            a{
+                display: block;
+                padding: 1rem 0;
+                font-size: 1.2rem;
+                min-height: max-content;
+                width: 100%;
+                cursor: pointer;
+                color: #ddd;
+                text-decoration: none;
+                transition: all 300ms;
+
+                &:hover {
+                    background: rgba(0, 0, 0, .1);
+                }
+            }
+        }
+    }
+}

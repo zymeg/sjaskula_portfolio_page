@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lotto</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Result: </h1>
+<div id="data">
+<span id='expenses'></span>
+<span id="main_prize"></span>
+<span id="wins"></span>
+<span id="balance"></span>
+</div>
+<h1>Type numbers</h1>
+<form>
+<input type='number' max='49' min='1' required>
+<input type='number' max='49' min='1' required>
+<input type='number' max='49' min='1' required>
+<input type='number' max='49' min='1' required>
+<input type='number' max='49' min='1' required>
+<input type='number' max='49' min='1' required>
+<input type='button' id='check' value='Check numbers'>
+</form>
+<div id="drawnNumbers">
+    <div class="drawn"></div>
+    <div class="drawn"></div>
+    <div class="drawn"></div>
+    <div class="drawn"></div>
+    <div class="drawn"></div>
+    <div class="drawn"></div>
+</div>
+
+<h1>Striked: </h1>
+<div id="striked">
+<span id="nothing"></span>
+<span id="one"></span>
+<span id="two"></span>
+<span id="three"></span>
+<span id="four"></span>
+<span id="five"></span>
+<span id="six"></span>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

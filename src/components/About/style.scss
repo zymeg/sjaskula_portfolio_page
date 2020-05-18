@@ -1,0 +1,40 @@
+#about {
+    min-height: 20vh;
+
+
+    .socials {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1rem;
+        width: 50%;
+        margin: 2rem auto;
+        align-content: center;
+        justify-items: center;
+
+        a {
+            color: #000;
+        }
+
+        svg {
+            font-size: 5rem;
+            cursor: pointer;
+            // border-bottom: 2px solid #ddd;
+            padding: 0 0 1rem 0;
+            color: #3aa;
+            transition: color 300ms;
+
+        }
+        
+        .lk:hover {
+            color:  #0e76a8;
+        }
+
+        .fb:hover{
+            color: #3b5998;
+        }
+
+        .ig:hover{
+            color: #C13584;
+        }
+    }
+}

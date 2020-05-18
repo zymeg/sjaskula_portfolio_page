@@ -1,0 +1,61 @@
+#skills {
+    min-height: 100vh;
+    background: #3aa;
+    color: #ddd;
+
+    
+
+    .MySkills {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1rem;
+        margin: 2rem auto;
+        width: 100%;
+
+        .column{
+            border-right: 2px solid #ddd; 
+
+            &:last-child {
+                border: none;
+            }
+            
+            h3{
+                font-size: 1.6rem;
+                font-weight: 300;
+                text-align: center;
+                margin: 2rem auto;
+
+            }
+
+            ul {
+                margin: 3rem;
+                // visibility: hidden;
+
+                li{
+                    font-size: 1.2rem;
+                    margin: 1rem auto;
+
+                    ul {
+                        margin: .5rem 1rem;
+
+                        li{
+                            margin: 0 auto;
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+.show {
+    animation-name: show;
+    animation-duration: 300ms;
+}
+
+@keyframes show{
+    0% {visibility: hidden;}
+    100% {visibility: visible} 
+}

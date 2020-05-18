@@ -11,8 +11,8 @@ export default class CV extends Component {
     render() {
         return (
             <div id='cv' className='component'>
-                    <div className='resumes'>
                 <h2>Curriculum vitae</h2>
+                    <div className='resumes'>
                     { /* eslint-disable-next-line */ }
                         <a href={en} className='btn' target='_blank'>English resume</a>
                     { /* eslint-disable-next-line */ }

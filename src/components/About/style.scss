@@ -1,7 +1,6 @@
 #about {
     min-height: 20vh;
 
-
     .socials {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -10,6 +9,15 @@
         margin: 2rem auto;
         align-content: center;
         justify-items: center;
+
+        @media screen and (max-width: 700px){
+            width: 100%;
+            margin: 1rem auto;
+        }
+
+        @media screen and (max-width: 1000px) and (min-width: 701px){
+            width: 90%;
+        }
 
         a {
             color: #000;
@@ -22,6 +30,14 @@
             padding: 0 0 1rem 0;
             color: #3aa;
             transition: color 300ms;
+
+            @media screen and (max-width: 700px){
+                font-size: 4.5rem;
+            }
+
+            @media screen and (max-width: 1000px) and (min-width: 701px){
+                font-size: 6rem;
+            }
 
         }
         

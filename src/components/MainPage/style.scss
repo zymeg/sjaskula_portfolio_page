@@ -5,17 +5,43 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
     line-height: 6rem;
     color: #222;
+
+    @media screen and (max-width: 700px){
+        min-height: 90vh;
+        line-height: initial;
+        
+    }
 
     h1{
         font-size: 5.2rem;
         font-weight: 400;
+
+        @media screen and (max-width: 700px){
+            font-size: 3.2rem;
+            font-weight: 500;
+            line-height: 3rem;
+        }
+
+        @media screen and (max-width: 1000px) and (min-width: 701px){
+            font-size: 4.7rem;
+        }
     }
 
     h2{
         font-size: 3.2rem;
         font-weight: 300;
+
+        @media screen and (max-width: 700px){
+            font-size: 2.3rem;
+            align-self: center;
+        }
+
+        @media screen and (max-width: 1000px) and (min-width: 701px){
+            font-size: 3.4rem;
+        }
     }
 
     .tabs{
@@ -29,6 +55,16 @@
         justify-content: space-between;
         width: 50%;
 
+        @media screen and (max-width: 700px){
+            grid-template-columns: 1fr;
+            line-height: initial;
+            width: 90%;
+        }
+
+        @media screen and (max-width: 1000px) and (min-width: 701px){
+            grid-template-columns: 1fr;
+            margin: 2rem auto
+        }
 
         .btn {
             color: #ddd;
@@ -44,6 +80,16 @@
             height: 100%;
             cursor: pointer;
             transition: all 300ms;
+
+            @media screen and (max-width: 700px){
+                padding: .7rem .2rem;
+                font-size: 1rem;
+            }
+
+            @media screen and (max-width: 1000px) and (min-width: 701px){
+                font-size: 1.8rem;
+            }
+
 
             &:hover {
                 background: darken($color: #3aa, $amount: 10%);

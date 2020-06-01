@@ -12,8 +12,26 @@
         margin: 2rem auto;
         width: 100%;
 
+        @media screen and (max-width: 700px){
+            grid-template-columns: 1fr;
+        }
+
+        @media screen and (max-width: 1000px) and (min-width: 701px){
+            grid-template-columns: 1fr;;
+        }
+
         .column{
             border-right: 2px solid #ddd; 
+
+            @media screen and (max-width: 700px){
+                border-right: none;
+                border-bottom: 2px solid #ddd;
+            }
+
+            @media screen and (max-width: 1000px) and (min-width: 701px){
+                border-right: none;
+                border-bottom: 2px solid #ddd;
+            }
 
             &:last-child {
                 border: none;
@@ -25,15 +43,44 @@
                 text-align: center;
                 margin: 2rem auto;
 
+                @media screen and (max-width: 700px){
+                    font-size: 1.2rem;
+                    text-align: left;
+                    margin: .5rem auto;
+                }
+
+                @media screen and (max-width: 1000px) and (min-width: 701px){
+                    font-size: 2.3rem;
+                    text-align: left;
+                    margin: 1rem auto;
+                }
+
             }
 
             ul {
                 margin: 3rem;
                 // visibility: hidden;
 
+                @media screen and (max-width: 700px){
+                    margin: 1rem 1.5rem;
+                }
+
+                @media screen and (max-width: 1000px) and (min-width: 701px){
+                    margin: 1.3rem 2.3rem;
+                }
+
                 li{
                     font-size: 1.2rem;
                     margin: 1rem auto;
+
+                    @media screen and (max-width: 700px){
+                        font-size: .9rem;
+                        margin: .6rem auto;
+                    }
+
+                    @media screen and (max-width: 1000px) and (min-width: 701px){
+                        font-size: 1.5rem;
+                    }
 
                     ul {
                         margin: .5rem 1rem;
@@ -41,6 +88,10 @@
                         li{
                             margin: 0 auto;
                             font-size: 1rem;
+
+                            @media screen and (max-width: 1000px) and (min-width: 701px){
+                                font-size: 1.3rem;
+                            }
                         }
                     }
                 }

@@ -1,10 +1,17 @@
 import React, { Component } from 'react'
-import VizSensor from 'react-visibility-sensor';
+import { motion } from 'framer-motion'
+import { InView } from 'react-intersection-observer'
 import './style.scss'
 
 export default class Skills extends Component {
     state = {
-        colViz: false
+        colViz: false,
+        firstVisible: false,
+        initialAnimation: false
+    }
+
+    showColumn = inView => {
+        if(inView === true) this.setState({ firstVisible: true });
     }
     
 
@@ -13,16 +20,13 @@ export default class Skills extends Component {
             <div id='skills' className='component'>
                 <h2>Skills </h2>
                 <div className='MySkills'>
-                    <div className='column'>
-                        <h3>Great Knowledge</h3>
-                        <ul className={this.state.colViz ? 'show' : ''}>
-                            <VizSensor
-                                partialVisibility
-                                onChange={(isVisible) => {
-                                    this.setState({colViz: isVisible})
-                                    console.log(isVisible)
-                                }}
-                            ></VizSensor>
+                    <InView as="div" className='column' onChange={(inView) => this.showColumn(inView)}>
+                        <motion.h3 initial={{ x: 100, opacity: 0 }} animate={this.state.firstVisible ? { x: 0, opacity: 1 } : false } transition={{  duration: 1, delay: 0.5 }}>Great Knowledge</motion.h3>
+                        <motion.ul
+                            initial={{ y: 100, opacity: 0 }}
+                            animate={this.state.firstVisible ? { y: 0, opacity: 1 } : false }
+                            transition={{ duration: 2, delay: 0.5 }}
+                            className={this.state.colViz ? 'show' : ''}> 
                             <li>HTML5</li>
                             <li>CSS3
                                 <ul>
@@ -38,11 +42,15 @@ export default class Skills extends Component {
                             <li>PHP7</li>
                             <li>MySQL</li>
                             <li>OracleDB</li>
-                        </ul>
-                    </div>
+                        </motion.ul>
+                    </InView>
                     <div className='column'>
-                        <h3>Good knowledge</h3>
-                        <ul>
+                    <motion.h3 initial={{ x: 100, opacity: 0 }} animate={this.state.firstVisible ? { x: 0, opacity: 1 } : false } transition={{  duration: 1, delay: 1 }}>Good knowledge</motion.h3>
+                        <motion.ul
+                            initial={{ y: 100, opacity: 0 }}
+                            animate={this.state.firstVisible ? { y: 0, opacity: 1 } : false }
+                            transition={{ duration: 2, delay: 1 }}
+                            className={this.state.colViz ? 'show' : ''}> 
                             <li>VueJS</li>
                             <li>NodeJS
                                 <ul>
@@ -51,14 +59,18 @@ export default class Skills extends Component {
                             </li>
                             <li>Python</li>
                             <li>MongoDB</li>
-                        </ul>
+                        </motion.ul>
                     </div>
                     <div className='column'>
-                        <h3>Basics</h3>
-                        <ul>
+                    <motion.h3 initial={{ x: 100, opacity: 0 }} animate={this.state.firstVisible ? { x: 0, opacity: 1 } : false } transition={{  duration: 1, delay: 1.5 }}>Basics</motion.h3>
+                        <motion.ul
+                            initial={{ y: 100, opacity: 0 }}
+                            animate={this.state.firstVisible ? { y: 0, opacity: 1 } : false }
+                            transition={{ duration: 2, delay: 1.5 }}
+                            className={this.state.colViz ? 'show' : ''}> 
                             <li>ReactJS</li>
                             <li>Django</li>
-                        </ul>
+                        </motion.ul>
                     </div>
                 </div>
             </div>

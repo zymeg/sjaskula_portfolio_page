@@ -26,33 +26,39 @@
             width: 95%;
         }
 
-        .btn {
+        div{
+            width: 100%;
             display: flex;
-            width: 40%;
-            padding: 2rem;
-            color: #ddd;
-            background: #3aa;
-            text-align: center;
             align-items: center;
             justify-content: center;
-            font-size: 2.3rem;
-            text-decoration: none;
-            border-radius: .3rem;
-            transition: background 300ms;
 
-            @media screen and (max-width: 700px){
-                padding: 1rem;
-                font-size: 1.2rem;
-            }
+            .btn {
+                display: flex;
+                width: 90%;
+                padding: 2rem;
+                color: #ddd;
+                background: #3aa;
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+                font-size: 2.3rem;
+                text-decoration: none;
+                border-radius: .3rem;
+                transition: background 300ms;
 
-            @media screen and (max-width: 1000px) and (min-width: 701px){
-                width: 45%;    
-            }
+                @media screen and (max-width: 700px){
+                    padding: 1rem;
+                    font-size: 1.2rem;
+                }
 
-            &:hover {
-                background: darken(#3aa, 10%);
+                @media screen and (max-width: 1000px) and (min-width: 701px){
+                    width: 45%;    
+                }
+
+                &:hover {
+                    background: darken(#3aa, 10%);
+                }
             }
         }
-
     }
 }

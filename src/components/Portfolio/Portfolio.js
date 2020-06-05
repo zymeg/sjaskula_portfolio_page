@@ -7,6 +7,7 @@ export default class Portfolio extends Component {
     state = {
         projects: [
             {
+                id: 1,
                 title: "(Vue.js) Weather App",
                 description: "Simple weather app built with Vue.js. OpenWeather Api provides information for this site.",
                 imgs: [
@@ -28,6 +29,7 @@ export default class Portfolio extends Component {
                 link: '/projects/weatherApp'
             },
             {
+                id: 1,
                 title: "(ES6, CSS3) Simple projects",
                 description: "3 projects that I've made in school as my homework. You can find more info in Git repository linked below...",
                 imgs: [
@@ -53,6 +55,7 @@ export default class Portfolio extends Component {
                 link: '/projects/js_css/'
             },
             {
+                id: 1,
                 title: "Discord bot",
                 description: "Discord app bot for managing Mafia game with simple commands",
                 imgs: [

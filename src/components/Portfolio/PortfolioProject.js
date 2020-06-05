@@ -1,32 +1,67 @@
 import React, { Component } from 'react'
-import VizSensor from 'react-visibility-sensor';
+import { motion } from 'framer-motion'
+import { InView } from 'react-intersection-observer'
 
 export default class PortfolioProject extends Component {
     state = {
-        projectViz: false
+        firstVisible: false
+    }
+
+    showProject = inView => {
+        if(inView === true) this.setState({ firstVisible: true });
     }
 
     render() {
         return (
             
-            <div className={`portfolioProject ${this.state.projectViz ? 'show' : ''}`}>
-                <VizSensor
-                    onChange={(isVisible) => {
-                        this.setState({projectViz: isVisible})
-                        
-                    }}
-                ></VizSensor>
-                <h3>{this.props.info.title}</h3>
+            <InView 
+                as="div" 
+                className='portfolioProject' 
+                onChange={(inView) => this.showProject(inView)}
+            >
+                <motion.h3 
+                    initial={{ x: 100, opacity: 0 }} 
+                    animate={this.state.firstVisible ? { x: 0, opacity: 1 } : false } 
+                    transition={{  duration: 1.5 }}
+                >{ this.props.info.title }</motion.h3>
 
-            <p className='description'>{this.props.info.description}</p>
+            <motion.p  
+                initial={{ x: -100, opacity: 0 }} 
+                animate={this.state.firstVisible ? { x: 0, opacity: 1 } : false } 
+                transition={{  duration: 1.5 }}
+                className='description'
+            >{this.props.info.description}</motion.p>
                     <div className='screenshots'>
                         {this.props.info.imgs.map((res, i) => {
-                            return (<img src={res.link} alt={res.alt} key={i} onClick={this.openShowcase} ></img>)
+                            return (
+                                <motion.img 
+                                    src={res.link} 
+                                    alt={res.alt} key={i} 
+                                    onClick={this.openShowcase}  
+                                    initial={{ opacity: 0 }} 
+                                    animate={this.state.firstVisible ? { opacity: 1 } : false } 
+                                    transition={{  duration: 0.7, delay: (i * 0.5) }} 
+                                ></motion.img>
+                            )
                         })}
                     </div>
-                    {this.props.info.link ? (<a href={this.props.info.link}>App page</a>) : ('')}
-                    {this.props.info.gitRepo ? (<a href={this.props.info.gitRepo}>Git repository</a>) : ('')}
-            </div>
+                    {this.props.info.link ? (
+                        <motion.a 
+                            href={this.props.info.link}
+                            initial={{ x: 1000, opacity: 0 }} 
+                            animate={this.state.firstVisible ? { x: 0, opacity: 1 } : false } 
+                            transition={{  duration: 1, delay: 0.5 }} 
+                        >App page</motion.a>
+                    ) : ('')}
+                    {this.props.info.gitRepo ? (
+                        <motion.a 
+                            href={this.props.info.gitRepo}
+                            initial={{ x: -1000, opacity: 0 }} 
+                            animate={this.state.firstVisible ? { x: 0, opacity: 1 } : false } 
+                            transition={{  duration: 1, delay: 0.5 }} 
+                        >Git repository</motion.a>
+                    ) : ('')}
+            </InView>
         )
     }
 }

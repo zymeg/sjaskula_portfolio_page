@@ -1,11 +1,23 @@
 import React, { Component } from 'react'
+import Btn from './Btn.js'
 import en from './en/cv.pdf'
 import pl from './pl/cv.pdf'
 import './style.scss'
 
 export default class CV extends Component {
     state = {
-        file: en
+        btns: [
+            {
+                id: 1,
+                title: 'English resume',
+                file: en
+            },
+            {
+                id: 2,
+                title: 'Polish resume',
+                file: pl
+            },
+        ]
     }
 
     render() {
@@ -13,10 +25,10 @@ export default class CV extends Component {
             <div id='cv' className='component'>
                 <h2>Curriculum vitae</h2>
                     <div className='resumes'>
-                    { /* eslint-disable-next-line */ }
-                        <a href={en} className='btn' target='_blank'>English resume</a>
-                    { /* eslint-disable-next-line */ }
-                        <a href={pl} className='btn' target='_blank'>Polish resume</a>
+                        {this.state.btns.map(e => {
+                        return (
+                            <Btn inner={e} key={e.id}/>
+                        )})}
                     </div>
             </div>
         )
